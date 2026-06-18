@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clean Water Changes Everything</title>
+    </head>
+    <!-- This is a basic HTML page for the charity called Charity: Water. The use of yellow is meant to entice a sense of energy and youthfulness as well as draw the eyes. The target audience is college students or people within that age demographic aiming to make a difference. So emphacizing the low price point of $10 to $40 makes it more flexible for the people with less means and the one with more means. The imagery is meant to present the picture of the work the donations allow and the reality of living within a water scarcity area. -->
+    <body>
+        <img src="CWLogo.webp" alt="charity: water logo" width="360" style="margin-bottom: 20px;"><br>
+        
+        <img src="cw_Selects_9x16_11.jpg" alt="Clean water flowing from a well tap in a village" width="300" style="border-radius: 8px;">
+        
+         <!--<video width="640" height="360" controls>
+            <source src="Handwashing.mp4" type="video/mp4">
+        </video>-->
+         <div style="max-width: 205px; margin-top: 15px; margin-bottom: 15px;">
+            <div style="position:relative; width:100%; height:0px; padding-bottom:177.778%">
+                <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/aen77h?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 8px;"></iframe>
+            </div>
+        <h1>100% of your money funds clean water.</h1>
+        <h2>Skip a coffee. Change a life.</h2>
+        <p>
+            Presently, 703 million people live without access to basic clean water. This crisis keeps kids out of school and traps entire communities in preventable cycles of disease. College students have the collective power to change this.
+        </p>
+        <!--<video width="640" height="360" controls>
+            <source src="Drilling Team.mp4" type="video/mp4">
+        </video>-->
+        <div style="position:relative; width:100%; height:0px; padding-bottom:177.778%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/tn697a?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+
+        <p>
+            That is where charity: water changes the game. With private donors covering operating costs, <strong>100% of your donation</strong> goes directly to funding sustainable water projects in the field.
+        </p>
+        <p>
+           Small changes build a lasting global impact.
+        </p>
+
+
+        <a href="https://charitywater.org" style="display: inline-block; text-decoration: none;">
+            <button style="font-size:25px; background-color:yellow; color:black; border-radius:25px; border:none; padding:10px 30px; font-family:sans-serif; font-weight:bold; cursor:pointer;">
+                Donate
+            </button>
+        </a>
+       
+        </div>
+        <div>
+            <h2>The water crisis by the numbers</h2>
+            <ul>
+                <li><strong>703 Million</strong> people lack access to clean water.</li>
+                <li><strong>1 in 10</strong> people globally are affected.</li>
+                <li><strong>From $10 to $40 or more</strong> can make the difference.</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Our impact in action</h2>
+            <img src="water.avif" alt="Drop of water being examined by scientist" width="600" style="border-radius: 8px;">
+
+        </div>
+    </body>
+</html>
