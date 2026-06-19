@@ -21,11 +21,9 @@ function processAnswer(category){
     }
     currentQuestionIndex++;
     if(currentQuestionIndex <quizData.length) {
-<<<<<<< HEAD
+        HEAD
         loadQuestion();
-=======
         loadedQuestion();
->>>>>>> 21718bdb8b138140b14f952f26f1196318d8c8e3
     } else {
         showResults(); 
     }
