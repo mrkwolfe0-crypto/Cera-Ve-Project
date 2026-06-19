@@ -13,46 +13,7 @@ function updatescore(category) {
     }
 }
 let currentQuestionIndex = 0;
- function processAnswer(category) {
-    const currentQuestion = quizData[currentQuestionIndex];
-    const container = document.getElementById('quiz-container');
-    let showExplanation = false;
-    if (currentQuestion.category === 'none') {
-        if (selectedOption !== currentQuestion.answer) {
-            showExplanation = true;
-        }
-    }
-    else {
-        if (selectedOption === currentQuestion.triggerAnswer) {
-            scores[currentQuestion.category]++;
-                console.log(`updated ${currentQuestion.category} score: ${scores[currentQuestion.category]}`);
-        }
-    if (showExplanation) {
-        container.innerHTML = `
-        <p><strong>Actual...</strong> ${currentQuestion.explanation}</p>
-        <button on click="nextQuestion()">Got it, Next Question</button>
-        `;
-    } else {
-        nextQuestion();
-     }
- }
 
-/*
-function processAnswer(category){
-    if (category !== 'none') {
-        scores[category]++;
-        console.log(`updated ${category} score: ${scores[category]}`);
-    }
-    currentQuestionIndex++;
-    if(currentQuestionIndex <quizData.length) {
-        loadQuestion();
-    } else {
-        showResults(); 
-    }
-}
-*/
-
-/*
 function processAnswer(selectedOption) {
     const currentQuestion = quizData[currentQuestionIndex];
     const container = document.getElementById('quiz-container');
@@ -71,25 +32,25 @@ function processAnswer(selectedOption) {
     if (showExplanation) {
         container.innerHTML = `
         <p><strong>Actual...</strong> ${currentQuestion.explanation}</p>
-        <button on click="nextQuestion()">Got it, Next Question</button>
+        <button onclick="nextQuestion()">Got it, NextQuestion</button>
         `;
     } else {
         nextQuestion();
      }
-*/
-    /*
+
+/*  
     if (selectedOption === currentQuestion.answer && currentQuestion.category !== 'none'){
         scores[currentQuestion.category]++;
         console.log(`updated ${currentQuestion.category} score: ${scores[currentQuestion.category]}`);
         } else {
             console.log(`Incorrect answer. Moving to explanation.`);
         }
-    */
+    
 
         container.innerHTML = `
         <p>${currentQuestion.explanation}</p>
-        <button onclick="nextQuestion()">Next Question</button>
-        `;
+        <button onclick="nextQuestion()">NextQuestion</button>
+        `;*/
     }
 
 
@@ -98,7 +59,7 @@ function loadQuestion() {
     const currentQuestion = quizData[currentQuestionIndex];
     container.innerHTML = `
         <p>${currentQuestion.question}</p>
-        ${currentQuestion.options.map(option => `<button onclick="processAnswer('${currentQuestion.category}')">${option}</button>`).join('')}
+        ${currentQuestion.options.map(option => `<button onclick="processAnswer('${option}')">${option}</button>`).join('')}
     `;
 }
 
