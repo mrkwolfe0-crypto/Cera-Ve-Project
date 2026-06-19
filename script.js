@@ -78,7 +78,7 @@ function showResults() {
     let productLinks = {
         dryness: "https://www.cerave.com/skincare/cleansers/hydrating-facial-cleanser",
         acne: "https://www.cerave.com/skincare/cleansers/acne-foaming-cream-cleanser",
-        sensitivity: "https://www.cerave.com/skincare/cleansers/soothing-micellar-water"
+        sensitivity: "https://www.cerave.com/skincare/cleansers/hydrating-micellar-water"
     };
 
     document.getElementById('quiz-container').innerHTML = `
