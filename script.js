@@ -118,5 +118,3 @@ const quizData = [
         category: "sensitivity" // Flag: sensitivity
     }
 ];
-
-
