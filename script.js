@@ -14,6 +14,7 @@ function updatescore(category) {
 }
 let currentQuestionIndex = 0;
 
+/*
 function processAnswer(category){
     if (category !== 'none') {
         scores[category]++;
@@ -21,13 +22,30 @@ function processAnswer(category){
     }
     currentQuestionIndex++;
     if(currentQuestionIndex <quizData.length) {
-        HEAD
         loadQuestion();
-        loadedQuestion();
     } else {
         showResults(); 
     }
 }
+*/
+
+function processAnswer(selectedOption) {
+    const currentQuestion = quizData[currentQuestionIndex];
+    const container = document.getElementById('quiz-container');
+    if (selectedOption === currentQuestion.answer && currentQuestion.category !== 'none'){
+        scores[currentQuestion.category]++;
+        console.log(`updated ${currentQuestion.category} score: ${scores[currentQuestion.category]}`);
+        } else {
+            console.log(`Incorrect answer. Moving to explanation.`);
+        }
+
+
+        container.innerHTML = `
+        <p>${currentQuestion.explanation}</p>
+        <button onclick="nextQuestion()">Next Question</button>
+        `;
+    }
+
 
 function loadQuestion() {
     const container = document.getElementById('quiz-container');
@@ -36,6 +54,15 @@ function loadQuestion() {
         <p>${currentQuestion.question}</p>
         ${currentQuestion.options.map(option => `<button onclick="processAnswer('${currentQuestion.category}')">${option}</button>`).join('')}
     `;
+}
+
+function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < quizData.length) {
+        loadQuestion();
+    } else {
+        showResults();
+    }
 }
 
 function showResults() {
@@ -91,3 +118,5 @@ const quizData = [
         category: "sensitivity" // Flag: sensitivity
     }
 ];
+
+
