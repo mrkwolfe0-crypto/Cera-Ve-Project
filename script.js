@@ -21,7 +21,7 @@ function processAnswer(category){
     }
     currentQuestionIndex++;
     if(currentQuestionIndex <quizData.length) {
-        loadedQuestion();
+        loadQuestion();
     } else {
         showResults(); 
     }
