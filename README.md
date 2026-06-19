@@ -29,3 +29,13 @@ Why this is better:
     It is professional: You start with the system (the recommendation engine and the stack), which gives a recruiter the confidence that you understand software architecture.
 
     It is memorable: The "Developer's Note" makes you sound like a candidate who is self-aware, which is a rare and highly valued quality in a junior developer.
+
+Resources:
+Resources 
+Quiz app using Javascript
+https://youtu.be/PBcqGxrr9g8?is=U99ZbKQ0Jyd-BJ_j
+
+HTML, Javascript, CSS website tutorial
+https://youtu.be/FazgJVnrVuI?is=p-IiWIh4MYRbm_ID
+
+
