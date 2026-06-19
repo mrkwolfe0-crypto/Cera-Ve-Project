@@ -13,6 +13,29 @@ function updatescore(category) {
     }
 }
 let currentQuestionIndex = 0;
+ function processAnswer(category) {
+    const currentQuestion = quizData[currentQuestionIndex];
+    const container = document.getElementById('quiz-container');
+    let showExplanation = false;
+    if (currentQuestion.category === 'none') {
+        if (selectedOption !== currentQuestion.answer) {
+            showExplanation = true;
+        }
+    }
+    else {
+        if (selectedOption === currentQuestion.triggerAnswer) {
+            scores[currentQuestion.category]++;
+                console.log(`updated ${currentQuestion.category} score: ${scores[currentQuestion.category]}`);
+        }
+    if (showExplanation) {
+        container.innerHTML = `
+        <p><strong>Actual...</strong> ${currentQuestion.explanation}</p>
+        <button on click="nextQuestion()">Got it, Next Question</button>
+        `;
+    } else {
+        nextQuestion();
+     }
+ }
 
 /*
 function processAnswer(category){
@@ -29,16 +52,39 @@ function processAnswer(category){
 }
 */
 
+/*
 function processAnswer(selectedOption) {
     const currentQuestion = quizData[currentQuestionIndex];
     const container = document.getElementById('quiz-container');
+    let showExplanation = false;
+    if (currentQuestion.category === 'none') {
+        if (selectedOption !== currentQuestion.answer) {
+            showExplanation = true;
+        }
+    }
+    else {
+        if (selectedOption === currentQuestion.triggerAnswer) {
+            scores[currentQuestion.category]++;
+            console.log(`updated ${currentQuestion.category} score: ${scores[currentQuestion.category]}`);
+        }
+    }
+    if (showExplanation) {
+        container.innerHTML = `
+        <p><strong>Actual...</strong> ${currentQuestion.explanation}</p>
+        <button on click="nextQuestion()">Got it, Next Question</button>
+        `;
+    } else {
+        nextQuestion();
+     }
+*/
+    /*
     if (selectedOption === currentQuestion.answer && currentQuestion.category !== 'none'){
         scores[currentQuestion.category]++;
         console.log(`updated ${currentQuestion.category} score: ${scores[currentQuestion.category]}`);
         } else {
             console.log(`Incorrect answer. Moving to explanation.`);
         }
-
+    */
 
         container.innerHTML = `
         <p>${currentQuestion.explanation}</p>
@@ -90,31 +136,43 @@ const quizData = [
     {
         question: "True/False: You should wash your face twice a day.",
         options: ["True", "False"],
-        category: "none" // Fact-based, no score
+        category: "none", 
+        answer: "True",
+        explanation: "Washing twice a day removes dirt without over-stripping your natural skin barrier."
     },
     {
         question:"How does your skin type feel 1 hour after cleansing?",
         options: ["Tight", "Shiny or Oily", "Comfortable"],
-        category: "dryness" // Flag: dryness
+        category: "dryness", 
+        triggerAnswer: "Tight",
+        explanation: ""
     },
     {
         question: "What is the primary cause of acne breakouts?",
         options: ["Bacteria", "Dirt", "Sun"],
-        category: "none" // Fact-based, no score
+        category: "none", 
+        answer: "Bacteria",
+        explanation: "Acne is primarily caused by excess sebum trapping C. acnes bacteria in your pores."
     },
     {
         question: "Do you notice frequent bumps or redness?",
         options: ["Often", "Sometimes", "Never or Rarely"],
-        category: "acne" // Flag: acne
+        category: "acne", 
+        triggerAnswer: "Often",
+        explanation: ""
     },
     {
         question: "Should you wear sunscreen if it's cloudy outside?",
         options: ["Yes", "No", "Sometimes"],
-        category: "sensitivity" // Fact-based, no score
+        category: "none", // Changed from "sensitivity" to "none" because it acts like a fact question
+        answer: "Yes",
+        explanation: "Up to 80% of UV rays can penetrate clouds!"
     },
     {
         question: "Does your skin sting when applying products?",
         options: ["Often", "Sometimes", "Never or Rarely"],
-        category: "sensitivity" // Flag: sensitivity
+        category: "sensitivity", 
+        triggerAnswer: "Often",
+        explanation: ""
     }
 ];
