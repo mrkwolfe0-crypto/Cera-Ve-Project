@@ -75,9 +75,6 @@ function showResults() {
         <p>Product Link: <a href="${productLinks[topCategory]}" target="_blank">View Product</a></p>
     `;
 }
-
-window.onload = loadQuestion;
-
 const quizData = [
     {
         id: "q1",
@@ -141,4 +138,5 @@ const quizData = [
         },
         explanation: ""
     }
+window.onload = loadQuestion;
 ];
