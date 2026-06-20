@@ -138,5 +138,6 @@ const quizData = [
         },
         explanation: ""
     }
-    window.onload = loadQuestion;
+    
 ];
+window.onload = loadQuestion;
