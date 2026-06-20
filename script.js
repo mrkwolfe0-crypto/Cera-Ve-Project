@@ -15,6 +15,30 @@ function updatescore(category) {
 let currentQuestionIndex = 0;
 
 function processAnswer(selectedOption) {
+    const currentQuestion = quizData[currentQuestionIndex];
+    const container = document.getElementById('quiz-container');
+
+    if (currentQuestion.type === "scored") {
+        if (selectedOption === currentQuestion.score.trigger) {
+            scores[currentQuestion.score.category]++;
+            console.log(`Updated ${currentQuestion.score.category} score to: ${scores[currentQuestion.score.category]}`);
+        }
+    } 
+    else if (currentQuestion.type === "fact") {
+        if (selectedOption !== currentQuestion.correctAnswer) {
+            // Show explanation only if wrong
+            container.innerHTML = `
+                <p><strong>Actual...</strong> ${currentQuestion.explanation}</p>
+                <button onclick="nextQuestion()">Got it, Next</button>
+            `;
+            return; // Exit function so we don't call nextQuestion() automatically
+        }
+    }
+    nextQuestion();
+}
+
+/*
+function processAnswer(selectedOption) {
     const currentQuestion = quizData[currentQuestionIndex];
     const container = document.getElementById('quiz-container');
     let showExplanation = false;
@@ -37,7 +61,7 @@ function processAnswer(selectedOption) {
     } else {
         nextQuestion();
      }
-
+*/
 /*  
     if (selectedOption === currentQuestion.answer && currentQuestion.category !== 'none'){
         scores[currentQuestion.category]++;
