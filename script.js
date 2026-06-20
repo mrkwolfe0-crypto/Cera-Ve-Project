@@ -37,7 +37,6 @@ function processAnswer(selectedOption) {
     nextQuestion();
 }
 
-    }
 
 
 function loadQuestion() {
