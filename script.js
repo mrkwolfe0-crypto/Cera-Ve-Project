@@ -93,6 +93,7 @@ function showResults() {
 
 window.onload = loadQuestion;
 
+/*
 const quizData = [
     {
         question: "True/False: You should wash your face twice a day.",
@@ -134,6 +135,69 @@ const quizData = [
         options: ["Often", "Sometimes", "Never or Rarely"],
         category: "sensitivity", 
         triggerAnswer: "Often",
+        explanation: ""
+    }*/
+const quizData = [
+    {
+        id: "q1",
+        type: "fact",
+        question: "True/False: You should wash your face twice a day.",
+        options: ["True", "False"],
+        correctAnswer: "True",
+        explanation: "Washing twice a day removes dirt without over-stripping your natural skin barrier."
+    },
+
+    {
+        id: "q2",
+        type: "scored",
+        question: "How does your skin type feel 1 hour after cleansing?",
+        options: ["Tight", "Shiny or Oily", "Comfortable"],
+        score: {
+            category: "dryness",
+            trigger: "Tight"
+        },
+        explanation: ""
+    },
+
+    {
+        id: "q3",
+        type: "fact",
+        question: "What is the primary cause of acne breakouts?",
+        options: ["Bacteria", "Dirt", "Sun"],
+        correctAnswer: "Bacteria",
+        explanation: "Acne is primarily caused by excess sebum trapping C. acnes bacteria in your pores."
+    },
+
+    {
+        id: "q4",
+        type: "scored",
+        question: "Do you notice frequent bumps or redness?",
+        options: ["Often", "Sometimes", "Never or Rarely"],
+        score: {
+            category: "acne",
+            trigger: "Often"
+        },
+        explanation: ""
+    },
+
+    {
+        id: "q5",
+        type: "fact",
+        question: "Should you wear sunscreen if it's cloudy outside?",
+        options: ["Yes", "No", "Sometimes"],
+        correctAnswer: "Yes",
+        explanation: "Up to 80% of UV rays can penetrate clouds!"
+    },
+
+    {
+        id: "q6",
+        type: "scored",
+        question: "Does your skin sting when applying products?",
+        options: ["Often", "Sometimes", "Never or Rarely"],
+        score: {
+            category: "sensitivity",
+            trigger: "Often"
+        },
         explanation: ""
     }
 ];
